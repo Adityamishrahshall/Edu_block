@@ -8,6 +8,7 @@ import ProfilePage from './components/pages/ProfilePage';
 import ExplorePage from './components/pages/ExplorePage';
 import DashboardOverview from './components/dashboard/DashboardOverview';
 import CourseCard from './components/courses/CourseCard';
+import AILearningAssistant from './components/ai/AILearningAssistant';
 import BadgeCard from './components/badges/BadgeCard';
 import CertificateViewer from './components/certificates/CertificateViewer';
 import CourseCreation from './components/courses/CourseCreation';
@@ -39,7 +40,12 @@ const AppContent: React.FC = () => {
   const renderContent = () => {
     switch (activeTab) {
       case 'dashboard':
-        return <DashboardOverview />;
+        return (
+          <div className="space-y-8">
+            <DashboardOverview />
+            <AILearningAssistant />
+          </div>
+        );
         
       case 'courses':
         return (
